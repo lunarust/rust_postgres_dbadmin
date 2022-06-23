@@ -72,6 +72,5 @@ Not much there
 
 bits & pieces from [notryanb](https://github.com/notryanb/psql_connect/blob/master/src/main.rs)
 
-## Licensing
+## MIT License
 
-not much here neither
