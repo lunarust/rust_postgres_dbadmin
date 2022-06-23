@@ -55,10 +55,10 @@ Build and documentation will be created under ./target/
 - [x] Create user
 - [x] Drop user
 - [x] Drop user with schema permission
-- [?] Drop user no prompt, but should we?
-- [?] Add user to role (ie. write), not tested yet
+- [ ] Drop user no prompt, but should we?
+- [ ] Add user to role (ie. write), not tested yet
 - [x] Review user, checks permissions and roles
-- [?] Change password, not tested yet
+- [ ] Change password, not tested yet
 - [x] Search user with pattern
 
 ## Features
