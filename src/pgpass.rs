@@ -61,15 +61,18 @@ pub fn parse_pg_pass() -> Result<PgConfigList, Error> {
     let home = dirs::home_dir();
     let file_path = Path::new(".pgpass");
     let pg_pass_path = home.unwrap().join(file_path);
-//    println!("testing that {}", pg_pass_path.display());
-    //let tst = home.push("myfile.tar.gz");
-//    Path::new("..").join("bin").join("openvpn.exe");
     let pg_pass_file = File::open(pg_pass_path)?;
     let reader = BufReader::new(pg_pass_file);
     let mut config_list = PgConfigList::new();
 
     for line in reader.lines() {
-        let mut params = line.as_ref().unwrap().split(':');
+        // Checking first if the line is either commented or empty, we skip
+        let line = line?;
+        if line.is_empty() { continue; }
+        if line.starts_with(['#', '\n']) { continue; }
+
+        let mut params = line.split(':');
+
         let hostname = params.next().unwrap().to_string();
         let port = params.next().unwrap().parse::<u16>().unwrap();
         let dbname = params.next().unwrap().into();
@@ -79,7 +82,7 @@ pub fn parse_pg_pass() -> Result<PgConfigList, Error> {
             Some(alias) => alias.into(),
             None => hostname.clone()
         };
-//        println!("reading line: {}", alias);
+
         let config = PgConfig {
             alias: alias,
             hostname: hostname,
@@ -95,3 +98,4 @@ pub fn parse_pg_pass() -> Result<PgConfigList, Error> {
     Ok(config_list)
 
 }
+

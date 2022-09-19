@@ -104,7 +104,7 @@ use postgres::{Client, NoTls, Error};
   pub fn alter(dbsc: &String, newuser: &str) -> Result<(), Error> { // function has to be public to access from outside
     let newrole = "write";
     let mut client = Client::connect(&dbsc, NoTls)?;
-    println!("## GRANT {} TO {}", newuser, newrole);
+    println!("## GRANT {} TO {}", newrole, newuser);
     let btch = format!("GRANT {} TO {}", &newrole, &newuser);
     client.batch_execute(&btch)?;
 

@@ -24,7 +24,7 @@ You can bypass the menu passing argume directly to the command:
 
 Install Rust on your local machine, to do so please follow the official documentation
 
-[Rust get starteds](https://www.rust-lang.org/learn/get-started)
+[Rust get started](https://www.rust-lang.org/learn/get-started)
 
 ### Get a local copy using git
 
@@ -62,6 +62,7 @@ Build and documentation will be created under ./target/
 - [x] Review user, checks permissions and roles
 - [x] Change password, not tested yet
 - [x] Search user with pattern
+- [x] Issues with commented lines in pgpass
 
 ## Contributing
 
