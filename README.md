@@ -63,6 +63,7 @@ Build and documentation will be created under ./target/
 - [x] Change password, not tested yet
 - [x] Search user with pattern
 - [x] Issues with commented lines in pgpass
+- [ ] Showing only the first result for command search user / must show all of them, perhaps string_agg?
 
 ## Contributing
 

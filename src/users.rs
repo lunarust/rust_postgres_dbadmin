@@ -63,7 +63,7 @@ use postgres::{Client, NoTls, Error};
 
       let row = client.query_opt("SELECT 1 as foo FROM pg_roles WHERE rolname=$1", &[&newuser])?;
       match row {
-          Some(row) => {
+          Some(_row) => {
               println!("## Revoking from write role");
               let btchr = format!("REVOKE write FROM {}", &newuser);
               client.batch_execute(&btchr)?;

@@ -1,5 +1,4 @@
 use std::env;
-use clap::{App, Arg};
 use std::io::*;
 mod pgpass;
 mod users;
@@ -49,7 +48,7 @@ fn main() {
     aliases
         .iter()
         .enumerate()
-        .for_each(|(idx, alias)| engage(myusername.as_str(), myaction.as_str(), mypassword.as_str(), alias));
+        .for_each(|(_idx, alias)| engage(myusername.as_str(), myaction.as_str(), mypassword.as_str(), alias));
 
 }
 
