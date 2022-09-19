@@ -1,4 +1,7 @@
-# rustdbadmin, managing DB users across MGMT - Databases
+# rust postgres dbadmin
+
+Managing DB users across multiple Databases
+
 > This is my first Rust script, so please be gentle (⌒‿⌒)
 
 Reading through your local pgpass file, allows you to perform the following tasks:
