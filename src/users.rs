@@ -89,7 +89,8 @@ use postgres::{Client, NoTls, Error};
                   println!("REVOKE ALL PRIVILEGES ON SCHEMA {} FROM {}  ", rname, newuser);
                   client.batch_execute(&btchrow)?;
               }
-
+              //let btcerassign = format!("REASSIGN OWNED BY {} TO CURRENT_USER", &newuser);
+              //client.batch_execute(&btcerassign)?;
               let btch = format!("DROP USER IF exists {}", &newuser);
               client.batch_execute(&btch)?;
               println!("## User {} dropped!", newuser);
@@ -112,7 +113,8 @@ use postgres::{Client, NoTls, Error};
   pub fn change_password(dbsc: &String, newuser: &str, newpass: &str) -> Result<(), Error> { // function has to be public to access from outside
     let mut client = Client::connect(&dbsc, NoTls)?;
     println!("## CHANGE PWD {} TO {}", newuser, newpass);
-    let btch = format!("ALTER ROLE {} WITH PASSWORD {};", &newuser, &newpass);
+    let btch = format!("ALTER ROLE {} WITH PASSWORD '{}';", &newuser, &newpass);
+    println!("{}", btch);
     client.batch_execute(&btch)?;
 
     Ok(())
@@ -122,7 +124,7 @@ use postgres::{Client, NoTls, Error};
 
       const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                               abcdefghijklmnopqrstuvwxyz\
-                              0123456789)(&^%$#@~";
+                              0123456789&^%$#";
       const PASSWORD_LEN: usize = 15;
       let mut rng = rand::thread_rng();
 

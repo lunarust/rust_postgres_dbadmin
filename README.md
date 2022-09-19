@@ -21,13 +21,13 @@ You can bypass the menu passing argume directly to the command:
 
 Install Rust on your local machine, to do so please follow the official documentation
 
-https://www.rust-lang.org/learn/get-started
+[Rust get starteds](https://www.rust-lang.org/learn/get-started)
 
 
 ### Get a local copy using git
 
 ```bash
-git clone https://stash.mifinity.com/scm/devops/rustdbadmin.git
+git clone https://github.com/lunarust/rust_postgres_dbadmin.git
 ```
 
 ## Build or Run this project:
@@ -56,14 +56,11 @@ Build and documentation will be created under ./target/
 - [x] Drop user
 - [x] Drop user with schema permission
 - [ ] Drop user no prompt, but should we?
-- [ ] Add user to role (ie. write), not tested yet
+- [x] Add user to role (ie. write), not tested yet
 - [x] Review user, checks permissions and roles
-- [ ] Change password, not tested yet
+- [x] Change password, not tested yet
 - [x] Search user with pattern
 
-## Features
-
-Not much there
 
 ## Contributing
 
@@ -72,5 +69,7 @@ Not much there
 
 bits & pieces from [notryanb](https://github.com/notryanb/psql_connect/blob/master/src/main.rs)
 
-## MIT License
+## Licensing
 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
