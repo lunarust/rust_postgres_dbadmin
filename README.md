@@ -26,7 +26,6 @@ Install Rust on your local machine, to do so please follow the official document
 
 [Rust get starteds](https://www.rust-lang.org/learn/get-started)
 
-
 ### Get a local copy using git
 
 ```bash
@@ -64,11 +63,11 @@ Build and documentation will be created under ./target/
 - [x] Change password, not tested yet
 - [x] Search user with pattern
 
-
 ## Contributing
 
-
 ## Related projects
+
+## Inspiration
 
 bits & pieces from [notryanb](https://github.com/notryanb/psql_connect/blob/master/src/main.rs)
 
